@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "refactoring-fridays": {
+      "command": "refactoring-fridays-mcp",
+      "args": ["--stdio"],
+      "env": {
+        "RODER_WORKSPACE": "${CLAUDE_PROJECT_DIR}"
+      }
+    }
+  }
+}

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RefactoringFridays — Make agents prove their changes</title>
+  <meta name="description" content="An evidence gate for AI coding agents. Measure before editing, verify after changing." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="nav shell">
+    <a class="brand" href="#top">Refactoring<span>Fridays</span></a>
+    <a class="nav-link" href="#how">How it works</a>
+  </header>
+
+  <main id="top">
+    <section class="hero shell">
+      <div class="eyebrow">AI change safety for Rider and Claude Code</div>
+      <h1>Don’t ship AI code on trust.</h1>
+      <p class="hero-copy">Make agents prove their changes. RefactoringFridays measures risky code before an edit, creates a baseline, and verifies the result afterward.</p>
+      <div class="actions">
+        <a class="button primary" href="https://github.com/petrkoula/refactoring-fridays">View on GitHub</a>
+        <a class="button secondary" href="#how">See the evidence loop</a>
+      </div>
+      <div class="terminal">
+        <div class="terminal-bar"><i></i><i></i><i></i><span>refactoring-fridays</span></div>
+        <pre><code>$ agent wants to edit OrderService.cs
+
+Evidence gate
+  cognitive complexity   28 → baseline created
+  branch coverage        42%
+  change frequency       high
+  public API impact      unknown
+
+Decision: PLAN REQUIRED
+
+$ agent proposes a smaller, testable change
+$ 31 tests passed
+$ complexity reduced to 16
+
+Decision: VERIFIED</code></pre>
+      </div>
+    </section>
+
+    <section id="how" class="section shell">
+      <div class="section-heading">
+        <div class="eyebrow">The evidence loop</div>
+        <h2>Before the edit. After the change.</h2>
+        <p>AI can write code quickly. RefactoringFridays makes the change measurable, explainable, and verifiable.</p>
+      </div>
+      <div class="grid">
+        <article><span>01</span><h3>Measure</h3><p>Inspect complexity, churn, coverage, dependencies, and API impact.</p></article>
+        <article><span>02</span><h3>Baseline</h3><p>Record the current state before an agent touches existing code.</p></article>
+        <article><span>03</span><h3>Plan</h3><p>Require a proportionate plan when the target is risky.</p></article>
+        <article><span>04</span><h3>Verify</h3><p>Run tests, re-measure, and report what actually changed.</p></article>
+      </div>
+    </section>
+
+    <section class="contrast shell">
+      <div><div class="eyebrow">A different layer</div><h2>Not another code reviewer.</h2><p>Rider refactors. SonarQube measures. PR reviewers inspect the result. RefactoringFridays controls the evidence between an agent’s intention and its code change.</p></div>
+      <div class="quote">“No baseline, no risky edit.<br />No verification, no done.”</div>
+    </section>
+
+    <section class="section shell">
+      <div class="section-heading"><div class="eyebrow">Built for agent workflows</div><h2>Local first. MCP native.</h2><p>Use the same evidence gate from JetBrains Rider, Claude Code, CI, or another MCP-compatible coding agent.</p></div>
+      <div class="pills"><span>CodeMetrics.CLI</span><span>JetBrains Rider</span><span>Claude Code</span><span>MCP</span><span>Git</span><span>Tests</span></div>
+    </section>
+
+    <section class="cta shell"><h2>Make your agents prove their changes.</h2><p>Start with complexity. Add security and integrity guards when you are ready.</p><a class="button primary" href="https://github.com/petrkoula/refactoring-fridays">Explore the project</a></section>
+  </main>
+
+  <footer class="shell footer"><span>RefactoringFridays</span><span>Evidence-based change safety</span></footer>
+</body>
+</html>
